@@ -1,0 +1,114 @@
+.spotify-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(10, 4, 20, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.spotify-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.spotify-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #1db954;
+  transition: width 0.2s linear;
+}
+
+.spotify-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  gap: 16px;
+}
+
+.spotify-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.spotify-cover {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.spotify-bar.playing .spotify-cover {
+  animation: spotify-spin 6s linear infinite;
+}
+
+@keyframes spotify-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spotify-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: azure;
+}
+
+.spotify-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spotify-artist {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spotify-play {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #111;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.spotify-play:hover {
+  transform: scale(1.08);
+}
+
+.spotify-time {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: azure;
+  opacity: 0.75;
+  min-width: 80px;
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .spotify-meta { display: none; }
+  .spotify-time { min-width: 0; }
+}

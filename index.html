@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player-bar.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
+</head>
+
+<body>
+    <audio id="song" src="sound/505 - Arctic Monkeys.mp3" loop></audio>
+
+    <div class="night"></div>
+
+    <div class="greetings"><span style="animation-delay:0s">H</span><span style="animation-delay:.12s">o</span><span style="animation-delay:.24s">l</span><span style="animation-delay:.36s">a</span> <span style="animation-delay:.60s">L</span><span style="animation-delay:.72s">U</span><span style="animation-delay:.84s">C</span><span style="animation-delay:.96s">I</span><span style="animation-delay:1.08s">A</span><span style="animation-delay:1.20s">N</span><span style="animation-delay:1.32s">I</span><span style="animation-delay:1.44s">T</span><span style="animation-delay:1.56s">I</span><span style="animation-delay:1.68s">I</span><span style="animation-delay:1.80s">I</span><span style="animation-delay:1.92s">S</span><span style="animation-delay:2.04s">!</span></div>
+    <div class="description">
+        <span>ESTE DETALLE ES PARA TI :)</span>
+    </div>
+
+    <div class="button">
+        <button class="botones">
+            <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a>
+        </button>
+    </div>
+
+    <div class="spotify-bar" id="spotifyBar">
+        <div class="spotify-progress" id="spotifyProgress">
+            <div class="spotify-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="spotify-bar-inner">
+            <div class="spotify-track">
+                <img src="img/505.webp" alt="505" class="spotify-cover" id="spotifyCover">
+                <div class="spotify-meta">
+                    <span class="spotify-title">505</span>
+                    <span class="spotify-artist">Arctic Monkeys</span>
+                </div>
+            </div>
+            <button class="spotify-play" id="spotifyPlay">❚❚</button>
+            <span class="spotify-time" id="spotifyTime">0:00 / 0:00</span>
+        </div>
+    </div>
+
+    <script src="player-bar.js"></script>
+</body>
+
+</html>

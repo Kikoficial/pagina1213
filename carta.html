@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/carta.css">
+    <link rel="stylesheet" href="css/player-bar.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Carta</title>
+</head>
+
+<body>
+    <audio id="song" src="sound/505 - Arctic Monkeys.mp3" loop></audio>
+
+    <div class="night"></div>
+
+    <div class="collage">
+        <div class="polaroid polaroid--1">
+            <div class="polaroid-photo">
+                <img src="img/foto1.jpg" alt="Foto 1" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+            </div>
+        </div>
+        <div class="polaroid polaroid--2">
+            <div class="polaroid-photo">
+                <img src="img/foto2.jpg" alt="Foto 2" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+            </div>
+        </div>
+        <div class="polaroid polaroid--3">
+            <div class="polaroid-photo">
+                <img src="img/foto3.jpg" alt="Foto 3" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+            </div>
+        </div>
+        <div class="polaroid polaroid--4">
+            <div class="polaroid-photo">
+                <img src="img/foto4.jpg" alt="Foto 4" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+            </div>
+        </div>
+        <div class="polaroid polaroid--5">
+            <div class="polaroid-photo">
+                <img src="img/foto5.jpg" alt="Foto 5" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+            </div>
+        </div>
+    </div>
+
+    <div class="carta-wrapper">
+        <div class="sobre" id="sobre">
+            <span class="sobre-emoji sobre-emoji--closed">✉️</span>
+            <span class="sobre-emoji sobre-emoji--open">💌</span>
+            <span class="sobre-hint sobre-hint--default">Toca para abrir</span>
+            <span class="sobre-hint sobre-hint--hover">Tengo un mensaje para ti</span>
+        </div>
+
+        <div class="carta" id="carta">
+            <p>
+                Hoy cumplimos 3 meses juntos y no quería dejar pasar este día sin recordarte lo increíblemente feliz que me haces. 
+                Parece mentira lo rápido que vuela el tiempo cuando estoy a tu lado, pero al mismo tiempo siento como si te conociera de toda la vida por las cosas tan lindas que hemos construido. 
+                Llegaste a mi vida a llenarla de risas y de momentos que guardo con muchísimo cariño en el corazón.
+                Yo sé que es una relación a distancia, pero eso no es problema para nosotros porque sé que vamos a ser los mejores y vamos a superar esto muy fácil. 
+                Sé que a veces nos fusilamos, pero es normal en pareja, porque si no tenemos peleas nunca nos entenderíamos y por eso también la valoro mucho, porque usted me entiende perfectamente.
+                Me encanta cada detalle de ti, tu forma de ser, tus ocurrencias y la manera tan bonita en la que me tratas, incluso en los momentos más difíciles. 
+                Contigo las cosas simples se vuelven especiales, y compartir mi tiempo contigo es algo que ps aasssssx.
+                Estos noventa días han sido algo especiales para mí y solo confirman lo mucho que quiero seguir caminando a tu lado, conociéndote más, aprendiendo juntos y construyendo recuerdos🗣️. 
+                Gracias por tu cariño, por tu paciencia, por tu ternura y por hacerme sentir tan querido.
+
+                Felices 3 meses, Lucianitis. Esto apenas comienza y no imaginas la ilusión que me hace todo lo que aún nos falta por vivir.
+                ¡TE AMO MUCHO, MI NIÑA HERMOSA, Y BESITOOOOSSS! 🎣🎣🎣🎣
+
+            </p>
+            <p class="firma">Martinitis.</p>
+        </div>
+
+        <a href="index.html" class="volver">← Volver</a>
+    </div>
+
+    <div class="spotify-bar" id="spotifyBar">
+        <div class="spotify-progress" id="spotifyProgress">
+            <div class="spotify-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="spotify-bar-inner">
+            <div class="spotify-track">
+                <img src="img/505.webp" alt="505" class="spotify-cover" id="spotifyCover">
+                <div class="spotify-meta">
+                    <span class="spotify-title">505</span>
+                    <span class="spotify-artist">Arctic Monkeys</span>
+                </div>
+            </div>
+            <button class="spotify-play" id="spotifyPlay">❚❚</button>
+            <span class="spotify-time" id="spotifyTime">0:00 / 0:00</span>
+        </div>
+    </div>
+
+    <script src="carta.js"></script>
+    <script src="player-bar.js"></script>
+</body>
+
+</html>

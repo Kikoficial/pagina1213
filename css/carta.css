@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+:root{
+    --dark-color: #12042e;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', cursive;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-color);
+    color: azure;
+    overflow-x: hidden;
+    padding-bottom: 90px;
+}
+
+.night{
+    z-index: -1;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    filter: blur(0.1vmin);
+    background-image: radial-gradient(
+        ellipse at top,
+        rgba(184, 59, 94, 0.25) 0%,
+        var(--dark-color)
+      ),
+      radial-gradient(
+        ellipse at bottom,
+        var(--dark-color),
+        rgba(145, 233, 255, 0.25)
+      ),
+      repeating-linear-gradient(
+        220deg,
+        var(--dark-color) 0px,
+        var(--dark-color) 19px,
+        transparent 19px,
+        transparent 22px
+      ),
+      repeating-linear-gradient(
+        189deg,
+        var(--dark-color) 0px,
+        var(--dark-color) 19px,
+        transparent 19px,
+        transparent 22px
+      ),
+      repeating-linear-gradient(
+        148deg,
+        var(--dark-color) 0px,
+        var(--dark-color) 19px,
+        transparent 19px,
+        transparent 22px
+      ),
+      linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+}
+
+.collage{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.polaroid{
+    position: absolute;
+    width: 220px;
+    background: #f4f4f4;
+    padding: 14px 14px 34px;
+    border-radius: 6px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
+}
+
+.polaroid-photo{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #2c1250, #872341);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.polaroid-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.polaroid-photo.empty::after{
+    content: "🌸";
+    font-size: 3rem;
+    opacity: .6;
+}
+
+.polaroid--1{ top: 5%; left: 3%; transform: rotate(-9deg); }
+.polaroid--2{ top: 8%; right: 3%; transform: rotate(7deg); }
+.polaroid--3{ top: 40%; left: 1%; transform: rotate(5deg); }
+.polaroid--4{ bottom: 10%; right: 2%; transform: rotate(10deg); }
+.polaroid--5{ bottom: 8%; left: 3%; transform: rotate(-6deg); }
+
+@media only screen and (max-width: 900px){
+    .polaroid{ width: 150px; padding: 10px 10px 24px; }
+}
+
+@media only screen and (max-width: 600px){
+    .polaroid{ width: 120px; padding: 8px 8px 20px; }
+    .polaroid--3{ display: none; }
+}
+
+.carta-wrapper{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+.sobre-emoji{
+    font-size: 4.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 15px rgba(57, 198, 214, 0.6));
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.sobre-emoji--open{
+    display: none;
+    transform: scale(0.5) rotate(-8deg);
+    opacity: 0;
+}
+
+.sobre:hover .sobre-emoji--closed{
+    display: none;
+}
+
+.sobre:hover .sobre-emoji--open{
+    display: block;
+    transform: scale(1.1) rotate(0deg);
+    opacity: 1;
+}
+
+.sobre-hint{
+    font-size: .85rem;
+    opacity: .7;
+}
+
+.sobre-hint--hover{
+    display: none;
+}
+
+.sobre:hover .sobre-hint--default{
+    display: none;
+}
+
+.sobre:hover .sobre-hint--hover{
+    display: block;
+    opacity: 1;
+}
+
+@keyframes float{
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-10px); }
+}
+
+.carta{
+    display: none;
+    max-width: 520px;
+    background: #111;
+    border: 1px solid rgba(57, 198, 214, 0.4);
+    border-radius: 12px;
+    padding: 30px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    box-shadow: 0 0 25px rgba(57, 198, 214, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.carta.visible{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.firma{
+    margin-top: 20px;
+    font-style: italic;
+    opacity: .8;
+}
+
+.volver{
+    color: #39c6d6;
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+.volver:hover{
+    text-decoration: underline;
+}
